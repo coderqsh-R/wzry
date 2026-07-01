@@ -1,0 +1,37 @@
+/* 公共区域01 */
+.wrapper01 {
+  width: 990px;
+  height: 41px;
+}
+/* 公共区域02 */
+.wrapper02 {
+  width: 1300px;
+  margin: 0 auto;
+}
+/* 公共区域03 */
+.wrapper03 {
+  width: 990px;
+  margin: 0 auto;
+}
+
+/* 封装下拉icon */
+.xl_icon {
+  /* display: inline-block; */
+  display: none;
+  width: 24px;
+  height: 24px;
+  background: url("../Img/index.webp") no-repeat ;
+  vertical-align: middle;
+}
+.xl_icon.sh {
+  display: inline-block;
+  background-position: -136px -5px;
+}
+.xl_icon.news {
+  display: inline-block;
+  background-position: -137px -66px;
+}
+.xl_icon.hot {
+  display: inline-block;
+  background-position: -161px -66px;
+}

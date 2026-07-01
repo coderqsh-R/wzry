@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    .box {
+      width: 500px;
+      height: 500px;
+      background-color: rebeccapurple;
+    }
+    .cot1 {
+      width: 100px;
+      height: 100px;
+      background-color: red;
+    }
+    .cot2 {
+      width: 100px;
+      height: 100px;
+      background-color: rgb(175, 165, 165);
+    }
+    .cot1:has(+.cot2:hover) {
+      width: 1000px;
+    }
+    .cot1 .p {
+      display: inline-block;
+    }
+    .cot1:has(>.p:hover) + .cot2{
+      width: 200px;
+    }
+    .table-box {
+      width: 300px;
+      height: 200px;
+      background-color: #eee;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      text-align: center;
+    }
+    table thead {
+      background-color: #ddd;
+      height: 36px;
+    }
+    tr {
+      height: 36px;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+    <div class="cot1">
+      <span class="p">阿松大</span>
+    </div>
+    <div class="cot2"></div>
+  </div>
+  <div class="table-box">
+    <table>
+      <thead>
+        <tr>
+          <th>打赏</th>
+          <th>大师</th>
+          <th></th>
+          <th>我的</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+          <td>1</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</body>
+</html>

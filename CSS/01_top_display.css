@@ -1,0 +1,234 @@
+/* 顶部container区域 */
+.top-ct {
+  width: 100%;
+  height: 42px;
+  border-bottom: 1px solid #00000016;
+}
+
+.top-mct {
+  display: flex;
+  justify-content: space-between;
+  margin: 0 auto;
+  padding-right: 36px;
+  line-height: 41px;
+  position: relative;
+}
+
+/* 左侧区域 */
+.left-area {
+  display: flex;
+}
+.left-area .top-logo {
+  z-index: 100;
+  width: 150px;
+  height: 100%;
+  background: url("../Img/top-logo.webp") center/112px auto no-repeat;
+}
+.left-area .top-logo a {
+  display: block;
+  width: 100%;
+  text-indent: -9999px;
+  /* vertical-align: top; */
+}
+/* 广告详情展示 */
+.top-mct .top-g-info {
+  display: none;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  z-index: 159;
+}
+.top-mct .top-g-info img {
+  vertical-align: middle;
+}
+.top-mct .top-g-info a{
+  display: inline-block;
+}
+.top-g-info:has(>a:hover) {
+  display: block;
+}
+.left-area:has(>img:hover) ~ .top-g-info {
+  display: block;
+}
+/*
+.left-area>img:hover +.top-g-info{
+  display: block;
+} */
+
+/* 右侧区域 */
+.right-area a {
+  color: #666;
+  position: relative;
+}
+.right-area .qe {
+  display: inline-block;
+
+}
+.right-area a:first-of-type {
+  padding-right: 15px;
+}
+.right-area a:first-of-type:hover {
+  color: rgb(209, 16, 16);
+}
+.right-area .tsp {
+  display: inline-block;
+  position: relative;
+  width: 30px;
+  height: 30px;
+  background: url("../Img/title_sprite.webp");
+  vertical-align: middle;
+}
+.right-area .sh-icon {
+  left: 6px;
+  bottom: 2px;
+  background-position: -30px 0;
+}
+.right-area .sh-icon:hover {
+  cursor: pointer;
+}
+/* .right-area a .zk-icon {
+  right: 7px;
+  bottom: 3px;
+  transform: rotate(90deg);
+  opacity: 0.2;
+} */
+.right-area a.qe:last-of-type::after {
+  content: "";
+  position: absolute;
+  right: -27px;
+  top: 0;
+  bottom: 0;
+  margin: auto 0;
+  width: 30px;
+  height: 30px;
+  background: url("../Img/title_sprite.webp");
+  transform: rotate(90deg);
+  opacity: 0.1;
+}
+
+.hot-rank {
+  display: flex;
+  position: absolute;
+  overflow: hidden;
+  z-index: 160;
+  left: -45px;
+  width: 1020px;
+  height: 0;
+  background-color: #fff;
+}
+.hot-rank .client {
+  width: 373px;
+}
+.hot-rank .mobile {
+  flex: 1;
+}
+.rank .title {
+  width: 100%;
+  padding-left: 73px;
+  border-right: 1px solid #eee ;
+  height: 54px;
+  line-height: 54px;
+  font-size: 18px;
+  color: #afb7bf;
+  background-color: #ebeaea;
+}
+.mobile.rank .title {
+  padding-left: 50px;
+}
+.rank .title i {
+  display: inline-block;
+  position: relative;
+  top: 2px;
+  width: 3px;
+  height: 16px;
+  background-color: #afb7bf;
+}
+.rank .title span {
+  display: inline-block;
+  margin-left: 22px;
+}
+.rank .recommend {
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+  padding-left: 73px;
+}
+.mobile.rank .recommend {
+  padding-left: 50px;
+}
+.client.rank .recommend .list {
+  width: 140px;
+  border-right: 1px solid #eee;
+}
+.mobile.rank .recommend .list:nth-child(1){
+  width: 300px;
+  border-right: 1px solid #eee;
+}
+.mobile.rank .recommend .list:nth-child(2){
+  width: 250px;
+  border-right: 1px solid #eee;
+}
+.mobile.rank .recommend .list a:nth-of-type(2n) {
+  width: 120px;
+}
+.rank .recommend h3 {
+  position: relative;
+  padding: 20px 0 28px 30px;
+  font-size: 19px;
+  font-weight: 500;
+}
+.rank .recommend h3::before {
+  content: "";
+  display: inline-block;
+  position: absolute;
+  left: 0;
+  top: -6px;
+  bottom: 0;
+  margin: auto 0;
+  width: 20px;
+  height: 18px;
+  background: url("../Img/c-h.webp") center/cover;
+}
+.rank .recommend .hot-recommend h3 {
+  color: #ff3c6a;
+}
+.rank .recommend .new-recommend h3 {
+  color: #13cac5;
+}
+.rank .recommend .new-recommend h3::before {
+  background: url("../Img/c-n.webp") center/cover;
+}
+.rank .recommend ul {
+  width: 100%;
+}
+.rank .recommend .item {
+  display: flex;
+  justify-content: space-between;
+  text-align: left;
+}
+.rank .recommend .item a {
+  display: block;
+  font-size: 16px;
+  color: #868b90;
+}
+.rank .recommend .item a:hover {
+  color: #333b48;
+}
+/* 悬浮 */
+ .right-area:has(a.qe:hover) > .hot-rank
+{
+  animation: rank 0.3s linear forwards;
+}
+.hot-rank:hover {
+  height: 500px;
+}
+@keyframes rank {
+  from {
+    height: 0;
+  }
+  to {
+    height: 500px;
+  }
+}
